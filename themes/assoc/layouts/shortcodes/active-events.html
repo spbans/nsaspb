@@ -1,0 +1,23 @@
+			{{ $url := "content/tables/events.csv" }}
+			{{ $sep := "," }}
+			<div class="list-header"></div>
+			<ul class="media-list">
+			{{ range $i, $r := getCSV $sep $url }}
+			{{ if ne $i 0 }}
+			{{ if (time (index $r 5)).After now  }} 
+
+			<li class="media">	
+				<div class="media body">
+					<h3 class="media-heading  {{ if (index $r 6) }}emph{{ end }}"> <time> {{ index $r 1 }} </time> · {{ index $r 0 }} </h3>
+					<p> {{ index $r 2 }} 
+					{{ if (index $r 3) }} <a href="\page\{{ index $r 3 }}"> полный текст </a> {{ end }}
+					{{ if (index $r 4) }} <a href="\event-cont\{{ index $r 4 }}"> программа </a> {{ end }}
+					</p>
+				</div>
+			</li>
+			<li class="header-divider"></li>
+			{{ end }}
+			{{ end }}
+			{{ end }}
+			</ul>
+			{{- .Inner -}}

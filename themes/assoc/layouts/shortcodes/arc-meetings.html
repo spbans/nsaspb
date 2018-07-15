@@ -1,0 +1,19 @@
+			{{ $url := "content/tables/meetings.csv" }}
+			{{ $sep := "," }}
+			{{ range $i, $r := getCSV $sep $url }}
+			{{ if ne $i 0 }} 
+			<div class="infobox xlg">
+				<time> {{ index $r 1 }} </time>
+				<div class="details">
+					<h3> {{ index $r 0 }} </h3>
+					<p> Заседание пройдет на базе: {{ index $r 2 }} </p>
+					<p> <small> {{ index $r 4 }} </small> <br> {{ index $r 3 }} 
+						<br> <small> {{ index $r 6 }} </small> <br> {{ index $r 5 }}
+						<br> <small> {{ index $r 8 }} </small> <br> {{ index $r 7 }} </p>
+						<a href="/meet-cont/{{ index $r 9 }}" class="infolink">Программа заседания</a>
+					</div>
+				</div>
+			{{ end }}
+				<br>
+			{{ end }}
+			{{- .Inner -}}

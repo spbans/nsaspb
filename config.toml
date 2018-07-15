@@ -1,0 +1,17 @@
+baseURL = "http://www.example.com"
+title = "assoc"
+# for smart copyright line, leave this blank and check [params.copyright]
+copyright = ""
+theme = "assoc"
+
+[params]
+  title       = "АНХ·СПБ"
+  subtitle    = "Ассоциация нейрохирургов Санкт-Петербурга"
+  copyright   = "Released under the MIT license."
+  authorImage = "logo.jpg"
+
+  googleAnalytics = ""
+
+  name = "EM"
+  description = "Here is a description of your site."
+  pageNotFoundTitle = "404 - Page not found"
